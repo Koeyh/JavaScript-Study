@@ -22,6 +22,7 @@
 //     console.log(value);     // resolve에서 넘겨준 'adam'이 출력된다.
 // });
 
+/*
 let promise = new Promise((resolve, reject) => {
     console.log('dong something . .');
     setTimeout(() => {
@@ -36,5 +37,20 @@ promise.then((resData) => {
 }) .finally(() => {
     console.log('Run unconditionally !');
 })
+*/
 
-dsf
+let fetchNumber = new Promise((resolve, reject) => {
+    setTimeout(() => resolve(1), 1000);
+});
+
+fetchNumber
+.then(num => num * 2)
+.then(num => num * 3)
+.then(num => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(num - 1);
+        }, 1000);
+    })
+})
+.then(num => console.log(num));
