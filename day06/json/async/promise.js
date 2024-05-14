@@ -54,3 +54,24 @@ fetchNumber
     })
 })
 .then(num => console.log(num));
+
+// Error
+let getHan = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('🐓');
+        },1000);
+    });
+}
+
+let getEgg = (hen) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('🐣');
+        }, 1000);
+    });
+}
+
+getHan()
+.then(hen => getEgg(hen))
+.then(egg => console.log(egg));
