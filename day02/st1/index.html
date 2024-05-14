@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        // 웹 페이지 내 콘솔창에 해당 내용 출력
+        // body 태그에 작성해도 결과는 동일
+        console.log(" Hello Javascript!");
+    </script> -->
+    <!-- 외부 스크립트 가져오기 -->
+    <!-- <script src="variable.js" defer></script> -->
+    <script src="variable.js" async></script>
+</head>
+<body>
+    <!-- 내부 작성 / body 태그에 작성 시 위의 모든 정보를 읽은 후 스크립트 실행 
+        내부에 스크립트 작성을 하는 것이 적용 우선순위는 높음. -->
+    <!-- <script>
+        console.log("Hello Javascript");
+    </script> -->
+</body>
+</html>
+
+<!-- 
+    defer : 실행 순서 보장 가능 / 다운로드 및 실행 순서 보장
+    async : (비동기) 여러 script 파일의 실행 순서를 보장받을 수 없음
+ -->

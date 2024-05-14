@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <script>
+       let sol = 43;
+       function guessNumber() {
+            try{
+                // let input = prompt("숫자를 입력하세요."); 
+                let input = document.getElementById("number").value;
+                if(input < 0 || input > 100) throw("입력오류");
+                else if(sol > input) throw("너무 작음");
+                else if(sol < input && sol <=100) throw("너무 큼");
+                else if(sol == input) document.write("정답");
+               
+            } catch(err) {
+                document.getElementById("hint").innerHTML = '힌트: ' + err; 
+            }
+    }
+    // 첫번째로 발견되는 button 요소를 변수 button에 저장
+    let button = document.querySelector("button");
+    // 버튼에 eventListener를 추가하여 클릭 시 수행 될 행위 지정
+    button.addEventListener("click", guessNumber);
+
+    </script>
+    <h1>number Guess</h1>
+    <p>1부터 100 사이의 숫자를 입력하시오.</p>
+    <input type="text" id="number">
+    <button type="button" onclick="guessNumber()"> 숫자 추측</button> 
+    <!-- 하단 힌트값 출력 -->
+    <div id="hint"></div>
+</body>
+</html> 

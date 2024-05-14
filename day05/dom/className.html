@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByClassName</title>
+</head>
+<body>
+    <h1> getElementByClassName</h1>
+    <h2> 분식 메뉴</h2>
+    <ul>
+        <li>김밥</li>
+        <li>라면</li>
+        <li>떡볶이</li>
+    </ul>
+    <h2>중식 메뉴</h2>
+    <ul>
+        <li class="a">짜장면</li>
+        <li class="'a">짬뽕</li>
+        <li class="a">탕수육</li>
+    </ul>
+    <script>
+        // cFoodListElement 변수에 클래스명이 a인 모든 요소를 저장
+        const cFoodListElement = document.getElementsByClassName("a");
+        // cFoodListElement의 0번 idx의 값을 콘솔에 출력
+        console.log(cFoodListElement[0].textContent);
+    </script> 
+</body>
+</html>

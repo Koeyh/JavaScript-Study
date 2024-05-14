@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌석배치도</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            font-size: 10px;
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="seatingChartHeader">자리배치도</h2>
+    <table id="seatingChartTable"></table>
+
+    <script>
+        let memberNum = parseInt(prompt("한 줄에 몇 명씩 앉을지 입력하세요.")); 
+        // let totalSeats = 100;
+        // 총 인원수 입력받기
+        let totalSeats = parseInt(prompt("총 인원수를 입력하시오.")); 
+        // 총 좌석수와 한 줄에 앉을 인원수를 나눈 값 대입
+        let rowNum = totalSeats / memberNum; 
+
+        // 각 변수에 해당 요소들 대입
+        let table = document.getElementById("seatingChartTable");
+        let header = document.getElementById("seatingChartHeader");
+
+        // 열 개수만큼 반복 (for-1)
+        for (let i = 0; i < rowNum; i++) {
+            // row에 tr요소들 대입
+            let row = document.createElement("tr");
+            // 행별 인원 수 만큼 반복 (for-2)
+            for (let j = 0; j < memberNum; j++) {
+                let seatNum = i * memberNum + j + 1;
+                if (seatNum > totalSeats) break;
+                let cell = document.createElement("td");
+                cell.textContent = "좌석 " + seatNum;
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+    </script>
+</body>
+</html>

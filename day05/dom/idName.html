@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="welcome">환영합니다.</p>
+    <script>
+        const changeColor = (newColor) => {     // Arrow 함수
+            const welc = document.getElementById("welcome");
+            welc.style.color = newColor;
+        }
+    </script>
+    <!-- onclick : 이벤트 속성 -->
+    <button type="button" onclick="changeColor('red');">빨간색 변환</button>
+    <button type="button" onclick="changeColor('blue');">파란색 변환</button>
+</body>
+</html>
