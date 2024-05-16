@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- string 타입이라 데이터를 사용할 수 없음
+    <input type="button" value="fetch test" onclick="
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(res => console.log(res.body));
+    "> -->
+
+    <input type="button" value="fetch test" onclick="
+        fetch('https://jsonplaceholder.typicode.com/posts/1') // fetch() : Promise 타입을 반환하는 Promise 객체 중 하나
+        .then(res => console.log(res.json()));
+        ">
+</body>
+</html>
